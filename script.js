@@ -90,16 +90,62 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  if(specialCharacters) {
+    for(let i = 0; i < specialCharacters.length; i++);
 
+  } else if(numericCharacters) {
+    for(let i = 0; i < numericCharacters.length; i++);
+
+  } else if(lowerCasedCharacters) {
+    for(let i = 0; i < lowerCasedCharacters.length; i++);
+  
+  } else (upperCasedCharacters) =>
+    {for(let i = 0; i < upperCasedCharacters.length; i++);
+
+}
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  for(i = 0; i < arr.length; i++) {
+    let chars = specialCharacters.concat(numericCharacters, lowerCasedCharacters, upperCasedCharacters);
+    let randomNumber = Math.floor(Math.random() * chars.length);
 
+    
+  }
+  return (password += chars.substring(randomNumber, randomNumber +1));
 }
+
+
 
 // Function to generate password with user input
 function generatePassword() {
+  let passwordCharacters = prompt("How many characters would you like your password to contain?");
+  if ((passwordCharacters >= 10) && (passwordCharacters < 64)) {
+    alert("Click OK to confirm including special characters.");
+    alert("Click OK to confirm including numeric characters.");
+    alert("Click Ok to to confirm lowercase characters");
+    alert("Click OK to confirm including uppercase characters");
+  }
+  else {
+    alert("Must have a password with minimum 10 characters and less then 64 characters");
+  }
+
+  const generatePassword = (length, characters) => {
+    let password = "";
+    for (let i = 0; i < length; i++) {
+      password += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return password;
+
+  };
+
+  
+
+
+
 
 }
 
@@ -112,7 +158,8 @@ function writePassword() {
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
-}
+} 
+writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
